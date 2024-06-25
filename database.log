@@ -1,0 +1,147 @@
+1719309519222|123|statement|select * from information_schema.sequences
+1719309520189|459|statement|alter table if exists projets add column projet_id bigserial not null
+1719309520243|53|statement|alter table if exists projets add column nom_projet varchar(255)
+1719309520548|84|statement|create index idx_adresse_ville on adresse (ville)
+1719309520628|79|statement|create index idx_adresse_codePostal on adresse (code_postal)
+1719309520890|83|statement|create index idx_ecole_nom on ecole (nom)
+1719309521530|107|statement|create index idx_etudiant_nom on etudiant (nom)
+1719309521608|77|statement|create index idx_etudiant_prenom on etudiant (prenom)
+1719309521958|79|statement|create index idx_projet_nom on projets (nom)
+1719309522371|63|statement|select * from "public"."adresse" where 1=0
+1719309522820|70|statement|select * from "public"."ecole" where 1=0
+1719309523433|88|statement|select * from "public"."etudiant" where 1=0
+1719309523783|62|statement|select * from "public"."etudiants" where 1=0
+1719309524140|74|statement|select * from "public"."projet" where 1=0
+1719309524551|64|statement|select * from "public"."projets" where 1=0
+1719309636767|163|statement|select * from information_schema.sequences
+1719309638186|439|statement|create index idx_ecole_nom on ecole (nom)
+1719309640022|64|statement|select * from "public"."adresse" where 1=0
+1719309641053|568|statement|select * from "public"."ecole" where 1=0
+1719309641782|257|statement|select * from "public"."etudiant" where 1=0
+1719309644611|378|statement|select * from "public"."etudiants" where 1=0
+1719309644939|90|statement|select * from "public"."projet" where 1=0
+1719309645264|49|statement|select * from "public"."projets" where 1=0
+1719309760289|641|statement|select * from information_schema.sequences
+1719309827039|88|statement|select * from information_schema.sequences
+1719309827959|56|statement|create index idx_ecole_nom on ecole (nom_ecole)
+1719309828702|61|statement|select * from "public"."adresse" where 1=0
+1719309829169|52|statement|select * from "public"."ecole" where 1=0
+1719309829530|42|statement|select * from "public"."etudiant" where 1=0
+1719309829754|59|statement|select * from "public"."etudiants" where 1=0
+1719309829988|75|statement|select * from "public"."projet" where 1=0
+1719309830333|92|statement|select * from "public"."projets" where 1=0
+1719309849195|145|statement|insert into etudiant (ecole_id,nom,prenom) values (NULL,'Legrand','Paul')
+1719309849307|104|rollback|
+1719309874187|43|statement|insert into etudiant (ecole_id,nom,prenom) values (NULL,'Legrand','Paul')
+1719309874267|72|commit|
+1719310032080|54|statement|insert into etudiant (ecole_id,nom,prenom) values (NULL,'Legrand','Paul')
+1719310032171|90|rollback|
+1719310124039|63|statement|select e1_0.ecole_id,e1_0.adresse_id,e1_0.domaine_ecole,e1_0.nom_ecole from ecole e1_0 offset 0 rows fetch first 10 rows only
+1719310124135|90|commit|
+1719313420792|0|rollback|
+1719313428089|175|statement|insert into etudiant (ecole_id,nom,prenom) values (NULL,'Dupont','Jean')
+1719313428160|71|rollback|
+1719313494035|87|statement|select p1_0.projet_id,p1_0.nom_projet,e1_0.projet_id,e1_1.etudiant_id,e1_1.ecole_id,e1_1.nom,e1_1.prenom from projets p1_0 left join etudiant_projet e1_0 on p1_0.projet_id=e1_0.projet_id left join etudiant e1_1 on e1_1.etudiant_id=e1_0.etudiant_id where p1_0.projet_id=1
+1719313494155|113|statement|insert into projets (nom_projet) values (NULL)
+1719313494243|92|commit|
+1719313524730|91|statement|insert into projets (nom_projet) values ('Projet 1')
+1719313524806|78|commit|
+1719313528043|89|statement|insert into projets (nom_projet) values ('Projet 1')
+1719313528167|124|commit|
+1719316167640|80|statement|select * from information_schema.sequences
+1719316168522|45|statement|select * from "public"."adresse" where 1=0
+1719316168850|55|statement|select * from "public"."ecole" where 1=0
+1719316169157|63|statement|select * from "public"."etudiant" where 1=0
+1719316169403|93|statement|select * from "public"."etudiants" where 1=0
+1719316169600|47|statement|select * from "public"."projet" where 1=0
+1719316169815|65|statement|select * from "public"."projets" where 1=0
+1719316288365|55|statement|select * from information_schema.sequences
+1719316289246|46|statement|select * from "public"."adresse" where 1=0
+1719316289528|51|statement|select * from "public"."ecole" where 1=0
+1719316289826|44|statement|select * from "public"."etudiant" where 1=0
+1719316290040|50|statement|select * from "public"."etudiants" where 1=0
+1719316290248|50|statement|select * from "public"."projet" where 1=0
+1719316290427|52|statement|select * from "public"."projets" where 1=0
+1719316338173|49|statement|insert into adresse (code_postal,complement_adresse,ville) values (0,'string','string')
+1719316338230|43|statement|insert into ecole (adresse_id,domaine_ecole,nom_ecole) values (1,'string','string')
+1719316338289|56|statement|insert into etudiant (ecole_id,nom,prenom) values (1,'string','string')
+1719316338349|58|statement|insert into projets (nom_projet) values ('string')
+1719316338417|52|statement|insert into etudiant_projet (etudiant_id,projet_id) values (6,4)
+1719316338465|42|rollback|
+1719316405074|44|statement|insert into adresse (code_postal,complement_adresse,ville) values (0,'string','string')
+1719316405127|50|statement|insert into ecole (adresse_id,domaine_ecole,nom_ecole) values (2,'string','string')
+1719316405188|59|statement|insert into etudiant (ecole_id,nom,prenom) values (2,'string','string')
+1719316405247|58|statement|insert into projets (nom_projet) values ('string')
+1719316405309|60|statement|insert into etudiant_projet (etudiant_id,projet_id) values (7,5)
+1719316405340|28|rollback|
+1719316501569|56|statement|insert into etudiant (ecole_id,nom,prenom) values (NULL,'string','string')
+1719316501617|45|statement|insert into projets (nom_projet) values ('string')
+1719316501678|59|statement|insert into etudiant_projet (etudiant_id,projet_id) values (8,6)
+1719316501728|49|rollback|
+1719316551948|34|statement|insert into etudiant (ecole_id,nom,prenom) values (NULL,'string','string')
+1719316551987|38|statement|insert into projets (nom_projet) values ('string')
+1719316552049|59|statement|insert into etudiant_projet (etudiant_id,projet_id) values (9,7)
+1719316552108|57|rollback|
+1719316650864|70|statement|select * from information_schema.sequences
+1719316651764|49|statement|select * from "public"."adresse" where 1=0
+1719316652098|51|statement|select * from "public"."ecole" where 1=0
+1719316652434|63|statement|select * from "public"."etudiant" where 1=0
+1719316652644|45|statement|select * from "public"."etudiants" where 1=0
+1719316652831|45|statement|select * from "public"."projet" where 1=0
+1719316653043|49|statement|select * from "public"."projets" where 1=0
+1719316669995|53|statement|insert into etudiant (ecole_id,nom,prenom) values (NULL,'string','string')
+1719316670043|39|statement|insert into projets (nom_projet) values ('string')
+1719316670117|56|statement|insert into etudiant_projet (etudiant_id,projet_id) values (10,8)
+1719316670164|41|rollback|
+1719316792676|53|statement|select * from information_schema.sequences
+1719316792961|76|statement|create table adresse (adresse_id bigserial not null, code_postal integer not null, complement_adresse varchar(255), ville varchar(255), primary key (adresse_id))
+1719316793028|61|statement|create table ecole (ecole_id bigserial not null, domaine_ecole varchar(50) not null, nom_ecole varchar(50) not null, adresse_id bigint, primary key (ecole_id))
+1719316793084|58|statement|create table etudiant (etudiant_id bigserial not null, nom varchar(50) not null, prenom varchar(50) not null, ecole_id bigint, primary key (etudiant_id))
+1719316793120|30|statement|create table etudiant_projet (projet_id bigint not null, etudiant_id bigint not null)
+1719316793162|39|statement|create table projets (projet_id bigserial not null, nom_projet varchar(255), primary key (projet_id))
+1719316793219|54|statement|create index idx_adresse_ville on adresse (ville)
+1719316793271|51|statement|create index idx_adresse_codePostal on adresse (code_postal)
+1719316793330|54|statement|create index idx_ecole_nom on ecole (nom_ecole)
+1719316793370|39|statement|alter table if exists ecole drop constraint if exists UK_1gdq2wbxry0ag0jo42plogwfh
+1719316793412|39|statement|alter table if exists ecole add constraint UK_1gdq2wbxry0ag0jo42plogwfh unique (adresse_id)
+1719316793479|66|statement|create index idx_etudiant_nom on etudiant (nom)
+1719316793536|60|statement|create index idx_etudiant_prenom on etudiant (prenom)
+1719316793584|42|statement|create index idx_projet_nom on projets (nom_projet)
+1719316793635|50|statement|alter table if exists ecole add constraint FK9ifsc3vh952adidu8vjqv5qx3 foreign key (adresse_id) references adresse
+1719316793709|73|statement|alter table if exists etudiant add constraint FKmvneq4dvp0lioe8nmuieuw44j foreign key (ecole_id) references ecole
+1719316793752|42|statement|alter table if exists etudiant_projet add constraint FKm8flcm377tl2u6v4xaaworkse foreign key (etudiant_id) references etudiant
+1719316793794|40|statement|alter table if exists etudiant_projet add constraint FKst5oocx3icc5jb34j3s5rqnpf foreign key (projet_id) references projets
+1719316812928|56|statement|insert into etudiant (ecole_id,nom,prenom) values (NULL,'string','string')
+1719316812998|59|statement|insert into projets (nom_projet) values ('string')
+1719316813068|55|statement|insert into etudiant_projet (etudiant_id,projet_id) values (1,1)
+1719316813118|43|commit|
+1719316872707|46|statement|insert into adresse (code_postal,complement_adresse,ville) values (0,'string','string')
+1719316872749|38|statement|insert into ecole (adresse_id,domaine_ecole,nom_ecole) values (1,'string','string')
+1719316872791|38|statement|insert into etudiant (ecole_id,nom,prenom) values (1,'string','string')
+1719316872826|37|statement|insert into projets (nom_projet) values ('string')
+1719316872874|46|statement|insert into etudiant_projet (etudiant_id,projet_id) values (2,2)
+1719316872923|45|commit|
+1719316899119|47|statement|select e1_0.etudiant_id,e1_0.ecole_id,e1_0.nom,e1_0.prenom from etudiant e1_0 offset 0 rows fetch first 10 rows only
+1719316899168|40|commit|
+1719316899239|54|statement|select p1_0.etudiant_id,p1_1.projet_id,p1_1.nom_projet from etudiant_projet p1_0 join projets p1_1 on p1_1.projet_id=p1_0.projet_id where p1_0.etudiant_id = any ('{"1","2"}')
+1719316901411|55|statement|select e1_0.etudiant_id,e1_0.ecole_id,e1_0.nom,e1_0.prenom from etudiant e1_0 offset 0 rows fetch first 10 rows only
+1719316901450|37|commit|
+1719316901490|38|statement|select p1_0.etudiant_id,p1_1.projet_id,p1_1.nom_projet from etudiant_projet p1_0 join projets p1_1 on p1_1.projet_id=p1_0.projet_id where p1_0.etudiant_id = any ('{"1","2"}')
+1719318446743|78|statement|select e1_0.etudiant_id,e1_0.ecole_id,e1_0.nom,e1_0.prenom from etudiant e1_0 offset 0 rows fetch first 10 rows only
+1719318446802|58|commit|
+1719318446858|54|statement|select p1_0.etudiant_id,p1_1.projet_id,p1_1.nom_projet from etudiant_projet p1_0 join projets p1_1 on p1_1.projet_id=p1_0.projet_id where p1_0.etudiant_id = any ('{"1","2"}')
+1719318720241|93|statement|select * from information_schema.sequences
+1719318721159|43|statement|select * from "public"."adresse" where 1=0
+1719318721468|59|statement|select * from "public"."ecole" where 1=0
+1719318721758|40|statement|select * from "public"."etudiant" where 1=0
+1719318721964|56|statement|select * from "public"."projets" where 1=0
+1719318759333|81|statement|select e1_0.etudiant_id,e1_0.ecole_id,e1_0.nom,e1_0.prenom from etudiant e1_0 offset 0 rows fetch first 10 rows only
+1719318759404|39|commit|
+1719318759467|48|statement|select p1_0.etudiant_id,p1_1.projet_id,p1_1.nom_projet from etudiant_projet p1_0 join projets p1_1 on p1_1.projet_id=p1_0.projet_id where p1_0.etudiant_id = any ('{"1","2"}')
+1719318768986|49|statement|select e1_0.ecole_id,e1_0.adresse_id,e1_0.domaine_ecole,e1_0.nom_ecole from ecole e1_0 offset 0 rows fetch first 10 rows only
+1719318769037|49|commit|
+1719318769115|65|statement|select a1_0.adresse_id,a1_0.code_postal,a1_0.complement_adresse,e1_0.ecole_id,e1_0.domaine_ecole,e1_0.nom_ecole,a1_0.ville from adresse a1_0 left join ecole e1_0 on a1_0.adresse_id=e1_0.adresse_id where a1_0.adresse_id=1
+1719318769164|46|statement|select e1_0.ecole_id,e1_0.etudiant_id,e1_0.nom,e1_0.prenom from etudiant e1_0 where e1_0.ecole_id=1
+1719318769224|59|statement|select p1_0.etudiant_id,p1_1.projet_id,p1_1.nom_projet from etudiant_projet p1_0 join projets p1_1 on p1_1.projet_id=p1_0.projet_id where p1_0.etudiant_id=2
+1719318972033|53|statement|select p1_0.projet_id,p1_0.nom_projet from projets p1_0 offset 0 rows fetch first 10 rows only
+1719318972073|43|commit|
